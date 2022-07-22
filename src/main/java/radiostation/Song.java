@@ -3,7 +3,7 @@ package radiostation;
 public class Song implements ContentActions {
     @Override
     public void play() {
-        System.out.println("La-la-la");
+        System.out.println();
 }
 
     @Override
