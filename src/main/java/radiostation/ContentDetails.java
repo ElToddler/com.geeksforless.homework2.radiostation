@@ -1,4 +1,5 @@
 package radiostation;
+
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -7,19 +8,18 @@ import java.lang.Math;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+public class ContentDetails {
 
-public class SongName{
-
-    static ContentActions songName() throws IOException {
-        int nowNumber = (int) ( Math.random() * 19 );
+    private Object contentDetails(int songCell, int contentSheet) throws IOException {
+        int nowNumber = (int) (Math.random() * 19);
         FileInputStream fis = new FileInputStream("C:\\Users\\okuznetsova\\Documents\\Songs.xls");
-        HSSFWorkbook songName = new HSSFWorkbook(fis);
-
-        HSSFSheet sheet = songName.getSheetAt(0);
+        HSSFWorkbook songDetail = new HSSFWorkbook(fis);
+        HSSFSheet sheet = songDetail.getSheetAt(contentSheet);
         Row row = sheet.getRow(nowNumber);
-        Cell cell = row.getCell(1);
-        String song = cell.toString();
+        Cell cell = row.getCell(songCell);
+        String name = cell.toString();
 
         return null;
     }
+
 }
